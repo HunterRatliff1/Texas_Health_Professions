@@ -37,10 +37,11 @@ shinyServer(function(input, output) {
     # data.frame named 'df'
     if(input$measurement=="per100k") {
       df <- HPOs %>%
-        melt(id.vars = c("County", "Population")) %>%
+        melt(id.vars = c("County", "Population", "sqmi")) %>%
         mutate(value = round(value / (Population/100000), 2)) %>%
-        dcast(County+Population ~ variable) 
-    } else(
+        dcast(County+Population+sqmi ~ variable) 
+    } 
+    else(
       df <- HPOs     # Otherwise just save 'HPOs' as the data.frame 
     )
     

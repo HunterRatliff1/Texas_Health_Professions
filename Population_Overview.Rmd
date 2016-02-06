@@ -1,0 +1,26 @@
+---
+title: "Population Overview"
+author: "Hunter Ratliff, @HunterRatliff1"
+date: "February 5, 2016"
+output: html_document
+---
+
+# Step 01 - Read Data & Load packages
+
+The following dataset was downloaded from the **Texas Department of State Health Services**
+on `2016-02-05`. I've made the data available on a [Google Sheet](), as a [RDS file](),
+and as a [CSV file](). I'll be working off of the RDS file, because I've done some preliminary
+data wrangling in R (see the `wrangle.R` script on Github).
+
+```{r}
+Population <- readRDS("Data/Population-full.RDS")
+
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
